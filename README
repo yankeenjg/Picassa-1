@@ -1,0 +1,26 @@
+Directions:
+
+See the following expression for an example of proper input to Picassa:
+
+(color (mod t x) (if (sin t) (sin x) (sin y)) (mod x y))
+
+1. x, y are parameters that take on the value of each pixels x, y coordinate
+2. t is a parameter that represents time
+3. if is an operator that evaluates the first expression and if its value is > 0, the result is the second expression, otherwise the result is the third expression. Treat a color's value as the average of its red green and blue components.
+4. color is an operator that returns an RGB color based upon its 3 input expressiosn
+5. sin/cos/mod return values based upon the sin/cos/mod of its input parameters
+
+
+other operators:
+1. (let varname value-expr expr-with-varname)
+
+Gives varname the value of value-expr when expr-with-varname is evaluated. The value of let is the value of the second subexpression. 
+So (let myVar .7 (mul myVar myVar)) is .49. Note that the "setting" only applies within the subexpression. So in something like (plus (let foo .5 (plus .1 .1)) foo), foo is undefined. Your code should display an appropriate error when an undefined variable is used.
+
+2. fun(expr, expr)
+
+A function that takes zero, one, or two expressions as its argument(s)
+note, not all of functions are defined continuously, so take appropriate action (i.e., divide-by-zero might silently return zero) 
+if function is scalar, i.e., typically operates on a single value like sin(x), it should be applied to each color component in turn
+
+3. AND MUCH, MUCH MORE! --> see expression/parenexpression classes for other operators
